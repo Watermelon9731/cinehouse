@@ -5,6 +5,7 @@ import moment from "moment";
 import { NavLink, useParams } from "react-router-dom";
 import { FileTextOutlined } from "@ant-design/icons";
 import { postAdminBookingHistoyApi } from "../../../redux/actions/adminManagerAction";
+import { userLocalService } from "../../../util/config";
 
 export default function BookingHistory(props) {
   const { bookingHistory } = useSelector((state) => state.adminReducer);
@@ -14,8 +15,14 @@ export default function BookingHistory(props) {
   const {name} = useParams();
 
   useEffect(async () => {
-    const action = postAdminBookingHistoyApi(name);
-    dispatch(action);
+    if (name !== 'yours') {
+      const action = postAdminBookingHistoyApi(name);
+      dispatch(action);
+    } else {
+      let admin = userLocalService.getUserInfor();
+      const action = postAdminBookingHistoyApi(admin.taiKhoan);
+      dispatch(action);
+    }
   }, [name]);
 
   const columns = [

@@ -21,8 +21,6 @@ function getItem(label, key, icon, children) {
     };
 }
 
-const admin = userLocalService.getUserInfor();
-
 const items = [
     getItem('Danh sách người dùng',"sub1", <TeamOutlined />,[
         getItem(<NavLink to='/admin'>Tất cả người dùng</NavLink>, "1"),
@@ -34,7 +32,7 @@ const items = [
         getItem(<NavLink to='/admin/movielist/upcoming'>Phim sắp chiếu</NavLink>, "5"),
         getItem(<NavLink to='/admin/movielist/addnew'>Thêm phim mới</NavLink>, "6"),
     ]),
-    getItem(<NavLink to={`/admin/booking/${admin.taiKhoan}`}>Lịch sử đặt vé</NavLink>, 'sub4', <ReconciliationOutlined/>),
+    getItem(<NavLink to={`/admin/booking/yours`}>Lịch sử đặt vé</NavLink>, 'sub4', <ReconciliationOutlined/>),
     getItem(<NavLink to='/admin/account'>Thông tin tài khoản</NavLink>, 'sub5', <ProfileOutlined/>)
 ];
 
