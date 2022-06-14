@@ -1,0 +1,7 @@
+export const DISPLAY_LOADING = 'DISPLAY_LOADING';
+
+export const HIDE_LOADING = 'HIDE_LOADING';
+
+export const DISPLAY_VIDEO = 'DISPLAY_VIDEO';
+
+export const HIDE_VIDEO = 'HIDE_VIDEO';

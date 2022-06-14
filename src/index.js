@@ -1,14 +1,32 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// Redux
+import { Provider } from 'react-redux'
+import { store } from './redux/configStore';
+// Tailwind elements
+import 'tw-elements';
+import { DOMAIN } from './util/config';
+import 'antd/dist/antd.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+// // SignalR
+// import * as signalR from '@aspnet/signalr'
+
+// // realtime socket
+// export const connection = new signalR.HubConnectionBuilder().withUrl(`${DOMAIN}/DatVeHub`).configureLogging(signalR.LogLevel.Information).build();
+// connection.start().then(() => {
+// }).catch(erros => {
+//   console.log(erros);
+// })
+
+ReactDOM.render(
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>
+  , //jsx
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

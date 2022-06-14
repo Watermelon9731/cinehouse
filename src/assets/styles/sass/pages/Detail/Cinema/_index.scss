@@ -1,0 +1,17 @@
+.cinema {
+  background-color: $theme-color;
+  .cinema-item {
+    background-color: rgba(51, 51, 51, 0.7);
+    border: 1px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .content {
+      ul {
+        .active {
+          background-color: rgb(129, 140, 248);
+        }
+      }
+    }
+  }
+}

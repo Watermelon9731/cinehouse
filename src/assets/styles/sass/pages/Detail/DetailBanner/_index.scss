@@ -1,0 +1,17 @@
+.glass-container {
+  text-align: center;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  .glass-item-s2 {
+    // margin: 0 auto;
+    // width: 16rem;
+    // height: 20rem;
+    // border: 1px solid rgba(255, 255, 255, 0.18);
+    // border-radius: 10px;
+    background: rgba(16, 18, 27, 0.5);
+    backdrop-filter: blur(2px);
+  }
+}

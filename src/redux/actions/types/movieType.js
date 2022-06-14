@@ -1,0 +1,9 @@
+export const GET_MOVIE_LIST = 'GET_MOVIE_LIST';
+
+export const GET_MOVIE_BANNER = 'GET_MOVIE_BANNER';
+
+export const GET_MOVIE_THEATER = 'GET_MOVIE_THEATER';
+
+export const GET_CINEMA_CHAIN = 'GET_CINEMA_CHAIN';
+
+export const GET_MOVIE_DETAIL = 'GET_MOVIE_DETAIL';
