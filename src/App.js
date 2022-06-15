@@ -43,6 +43,7 @@ function App() {
         <HomeTemplate exact path={'/'} comp={Home} />
         
         <HomeTemplate exact path={'/home'} comp={Home} />
+        
         <HomeTemplate exact path={'/detail/:id'} comp={Detail} />
         
         <UserTemplate exact path={'/login'} comp={Login} />

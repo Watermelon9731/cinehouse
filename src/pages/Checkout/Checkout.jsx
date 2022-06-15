@@ -7,12 +7,11 @@ import {
   postSeatBookingApi,
 } from "../../redux/actions/seatBookingAction";
 import { UserBookingModel } from "../../models/UserBookingModel";
-import { connection } from "../..";
 
 export default function Checkout(props) {
   const { userLogin } = useSelector((state) => state.userReducer);
 
-  const { bookingDetail, seatDetail, seatSelection, guestBooking } =
+  const { bookingDetail, seatDetail, seatSelection, guestBooking, userBooking } =
     useSelector((state) => state.seatBookingReducer);
 
   const dispatch = useDispatch();
@@ -193,7 +192,6 @@ export default function Checkout(props) {
             <button
               className="py-3 w-full bg-indigo-500 hover:bg-red-500 rounded-lg text-lg font-semibold uppercase"
               onClick={() => {
-                const userBooking = new UserBookingModel();
                 userBooking.maLichChieu = id;
                 userBooking.danhSachVe = [...seatSelection];
 

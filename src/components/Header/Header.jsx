@@ -102,7 +102,7 @@ export default function Header(props) {
                 onClick={() => {
                   userLocalService.removeUserInfor();
                   localStorage.removeItem(ACCESS_TOKEN);
-                  window.location.reload();
+                  history.push('/home')
                 }}
               >
                 Đăng xuất
@@ -126,6 +126,9 @@ export default function Header(props) {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={() => {
+              history.goBack();
+            }}
           >
             <svg
               aria-hidden="true"

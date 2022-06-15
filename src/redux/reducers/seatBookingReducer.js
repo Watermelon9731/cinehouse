@@ -10,7 +10,7 @@ const stateDefault = {
     guestBooking: [
         {maGhe: 47728},
         {maGhe: 47731},
-    ]
+    ],
 }
 
 export const seatBookingReducer = (state = stateDefault, action) => {
@@ -18,7 +18,6 @@ export const seatBookingReducer = (state = stateDefault, action) => {
         case GET_SEAT_BOOKING_LIST: {
             state.bookingDetail = action.bookingDetail;
             state.seatDetail = action.seatDetail;
-
             return { ...state };
         }
 
@@ -41,6 +40,7 @@ export const seatBookingReducer = (state = stateDefault, action) => {
 
         case FINISH_SEAT_BOOKING: {
             state.userBooking = new UserBookingModel();
+            state.seatSelection = [];
             return { ...state }
         }
 

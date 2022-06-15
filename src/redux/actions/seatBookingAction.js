@@ -53,7 +53,7 @@ export const postSeatBookingApi = (userBooking) => {
 
             await dispatch(loadingHideAction)
             
-            window.location.reload()
+            // window.location.reload()
 
         } catch (err) {
             dispatch(loadingHideAction);

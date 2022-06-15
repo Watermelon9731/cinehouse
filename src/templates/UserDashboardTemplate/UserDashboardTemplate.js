@@ -23,8 +23,8 @@ function getItem(label, key, icon, children) {
 
 
 const items = [
-    getItem(<NavLink to={`/user`}>Lịch sử đặt vé</NavLink>, 'sub1', <ReconciliationOutlined/>),
-    getItem(<NavLink to='/user/profile'>Thông tin tài khoản</NavLink>, 'sub2', <ProfileOutlined/>)
+    getItem(<NavLink to={`/user`}>Lịch sử đặt vé</NavLink>, 'sub1', <ReconciliationOutlined />),
+    getItem(<NavLink to='/user/profile'>Thông tin tài khoản</NavLink>, 'sub2', <ProfileOutlined />)
 ];
 
 export const UserDashboardTemplate = ({
@@ -62,10 +62,8 @@ export const UserDashboardTemplate = ({
                         </h1>
                         <button type='button' className="text-white rounded my-auto mr-10 relative" onClick={() => {
                             userLocalService.removeUserInfor();
-                            
-                            history.push('/home')
-                            
-                            window.location.reload();
+
+                            history.push('/home');
                         }}>
                             <span className="bg-indigo-500 p-3 rounded hover:bg-red-500 m-auto font-medium">
                                 Đăng xuất
@@ -80,7 +78,7 @@ export const UserDashboardTemplate = ({
                         </div>
                     </Content>
                     <Footer style={{ textAlign: "center", }}>
-                        Ant Design ©2018 Created by Ant UED
+                        Created by T.D.C.Thinh
                     </Footer>
                 </Layout>
             </Layout>

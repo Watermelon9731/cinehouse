@@ -91,9 +91,7 @@ export const AdminDashboardTemplate = ({
                         <button type='button' className="text-white rounded my-auto mr-10 relative" onClick={() => {
                             userLocalService.removeUserInfor();
                             
-                            history.push('/home')
-                            
-                            window.location.reload();
+                            history.push('/home');
                         }}>
                             <span className="bg-indigo-500 p-3 rounded hover:bg-red-500 m-auto font-medium">
                                 Đăng xuất
@@ -108,7 +106,7 @@ export const AdminDashboardTemplate = ({
                         </div>
                     </Content>
                     <Footer style={{ textAlign: "center", }}>
-                        Ant Design ©2018 Created by Ant UED
+                        Created by T.D.C.Thinh
                     </Footer>
                 </Layout>
             </Layout>

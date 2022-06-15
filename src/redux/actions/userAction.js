@@ -19,6 +19,7 @@ export const postUserLoginApi = (user) => {
                 history.goBack();
             }
         } catch (error) {
+            alert(error.response.data.content)
             console.log('error', error);
         }
     }
@@ -83,7 +84,7 @@ export const postEditedUserInfor = (formData) => {
             const action = postUserInfor();
             dispatch(action);
 
-            window.location.reload();
+            history.push('/home')
         } catch (err) {
             console.log(err);
         }

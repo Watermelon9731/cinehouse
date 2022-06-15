@@ -97,7 +97,9 @@ export const postAdminAddNewMovieApi = (formData) => {
         try {
             let result = await http.post(`https://movienew.cybersoft.edu.vn/api/QuanLyPhim/ThemPhimUploadHinh`, formData);
 
-            alert('Đã thêm thành công!')
+            alert('Đã thêm thành công!');
+
+            history.push('/admin/movielist');
         } catch (err) {
             console.log(err);
         }
@@ -116,8 +118,8 @@ export const postAdminEditedMovieApi = (formData) => {
             dispatch(action);
 
             history.push('/admin/movielist')
-
         } catch (err) {
+            alert('Phim này được đặt mặc định trên server bạn không thể chỉnh sửa nội dung này. Vui lòng thử lại với phim khác.')
             console.log(err);
         }
     }
