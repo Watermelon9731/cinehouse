@@ -58,8 +58,6 @@ export default function MovieList(props) {
             </div>
             <button className="absolute p-5 left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 z-90 transition-opacity opacity-0 hover:opacity-100" onClick={() => {
               dispatch(loadingDisplayVideoAction(movie.trailer))
-
-              // dispatch(loadingDisplayAction)
             }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +115,9 @@ export default function MovieList(props) {
                 </h3>
               </div>
             </div>
-            <button className="absolute p-5 left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 z-90 transition-opacity opacity-0 hover:opacity-100">
+            <button className="absolute p-5 left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 z-90 transition-opacity opacity-0 hover:opacity-100" onClick={() => {
+              dispatch(loadingDisplayVideoAction(movie.trailer))
+            }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-16 w-16 stroke-indigo-400"
@@ -138,7 +138,9 @@ export default function MovieList(props) {
                 />
               </svg>
             </button>
-            <button className="relative z-90 transition-colors bg-indigo-400 hover:bg-red-500 rounded p-3 text-white text-lg font-semibold w-full">
+            <button className="relative z-90 transition-colors bg-indigo-400 hover:bg-red-500 rounded p-3 text-white text-lg font-semibold w-full" onClick={() => {
+                history.push(`/detail/${movie.maPhim}`);
+              }}>
               Mua vé ngay
             </button>
           </div>
