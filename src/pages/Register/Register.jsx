@@ -1,24 +1,21 @@
-import {
-  AutoComplete,
-  Button,
-  Cascader,
-  Checkbox,
-  Col,
-  Form,
-  Input,
-  InputNumber,
-  Row,
-  Select,
-} from "antd";
+import { Checkbox, Form, Input } from "antd";
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { history } from "../../App";
 import { postUserRegisterApi } from "../../redux/actions/userAction";
-import { GROUP_CODE, LOGO } from "../../util/config";
+import { GROUP_CODE, LOGO, userLocalService } from "../../util/config";
 
 export default function Register() {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    let account = userLocalService.getUserInfor();
+    if (account) {
+      history.push('/home');
+    }
+  })
 
   const formik = useFormik({
     initialValues: {
@@ -76,8 +73,7 @@ export default function Register() {
 
   const [form] = Form.useForm();
 
-  const onFinish = (values) => {
-  };
+  const onFinish = (values) => {};
 
   return (
     <section className="register p-20 min-h-screen" id="registerForm">
@@ -103,11 +99,12 @@ export default function Register() {
                 message: "Vui lòng nhập đầy đủ họ và tên!",
               },
               {
-                pattern: "^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
-                "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
-                "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$",
-                message: 'Vui lòng nhật tên hợp lệ!'
-              }
+                pattern:
+                  "^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+                  "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+                  "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$",
+                message: "Vui lòng nhật tên hợp lệ!",
+              },
             ]}
           >
             <Input onChange={formik.handleChange} />
@@ -120,6 +117,11 @@ export default function Register() {
               {
                 required: true,
                 message: "Vui lòng nhập tên tài khoản!",
+              },
+              {
+                pattern: "^[a-z0-9_-]{3,16}$",
+                message:
+                  "Tên tài khoản phải được bắt đầu bằng chữ cái không dấu hoặc chữ số. Có thể sử dụng dấu gạch dưới hoặc gạch ngang làm ký tự đặt biệt. Tên tài khoản có độ dài từ 3 đến 16 ký tự",
               },
             ]}
           >

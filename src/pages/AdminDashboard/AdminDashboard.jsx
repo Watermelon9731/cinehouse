@@ -98,7 +98,14 @@ export default function AdminDashboard(props) {
     },
   ];
 
-  const data = userList;
+  const handleData = (data) => {
+    if(data) {
+      let list = data.filter(item => item['soDt'].length === 10);
+      return list;
+    }
+  }
+
+  const data = handleData(userList);
 
   const onSearch = (value) => {
     const action = getAdminUserListApi(value);

@@ -23,7 +23,6 @@ export default function Account() {
         `/api/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=${GROUP_CODE}&tuKhoa=${acc.taiKhoan}`
       );
 
-
       setUser({ infor: result.data.content[0] });
 
     } catch (err) {
