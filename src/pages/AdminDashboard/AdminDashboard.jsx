@@ -100,7 +100,7 @@ export default function AdminDashboard(props) {
 
   const handleData = (data) => {
     if(data) {
-      let list = data.filter(item => item['soDt'].length === 10);
+      let list = data.filter(item => item['soDT'].length === 10);
       return list;
     }
   }
