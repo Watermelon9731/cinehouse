@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
-import { Tabs, Collapse, List, Card } from "antd";
+import React from "react";
+import { Tabs, Collapse, List } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import {
-  getCinemaChainApi,
-  getMovieListApiAction,
-} from "../../../redux/actions/movieAction";
 import { NavLink } from "react-router-dom";
 import { history } from "../../../App";
 import { loadingDisplayVideoAction } from "../../../redux/actions/loadingAction";
@@ -20,12 +16,6 @@ export default function MovieList(props) {
   );
 
   const dispatch = useDispatch();
-
-  useEffect(async () => {
-    dispatch(getMovieListApiAction());
-
-    dispatch(getCinemaChainApi());
-  }, []);
 
   const timeShowing = moment().subtract(4, "weeks").format();
 
@@ -89,7 +79,7 @@ export default function MovieList(props) {
             </button>
           </div>
         );
-      }
+      } return null;
     });
   };
 
@@ -145,7 +135,7 @@ export default function MovieList(props) {
             </button>
           </div>
         );
-      }
+      } return null;
     });
   };
 
@@ -157,7 +147,7 @@ export default function MovieList(props) {
         <TabPane
           tab={
             <div className="px-3 py-2">
-              <img src={chain.logo} className="w-20" />
+              <img src={chain.logo} className="w-20" alt={chain.maHeThongRap}/>
             </div>
           }
           key={index}

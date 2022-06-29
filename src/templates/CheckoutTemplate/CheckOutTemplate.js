@@ -18,12 +18,11 @@ const CheckoutTemplate = ({
     }
 
     return (
-
-        <Fragment>
-            <Header />
-            <Route {...rest} render={props => <Component {...props} />} />
-            <Footer />
-        </Fragment>
+            <Route {...rest} render={props => <Fragment>
+                <Header />
+                <Component {...props} />
+                <Footer />
+            </Fragment>} />
     )
 };
 

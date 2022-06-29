@@ -12,9 +12,13 @@ export const UserTemplate = ({
     })
 
     return (
-        <Fragment>
-            <Header />
-            <Route {...rest} render={props => <Component {...props} />} />
-        </Fragment>
+        <Route {...rest} render={(props) => {
+            return (
+                <Fragment>
+                    <Header />
+                    <Component {...props} />
+                </Fragment>
+            )
+        }} />
     )
 };

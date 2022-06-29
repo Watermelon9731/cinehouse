@@ -1,17 +1,9 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
-import { getMovieBannerApiAction } from "../../../redux/actions/movieAction";
 
 export default function HomeBanner() {
   const { movieBanner } = useSelector((state) => state.movieReducer);
-
-  const dispatch = useDispatch();
-
-  useEffect(async () => {
-    const action = getMovieBannerApiAction();
-    dispatch(action);
-  }, []);
 
   const bannerRender = () => {
     return movieBanner.map((item, index) => {

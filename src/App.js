@@ -28,8 +28,7 @@ import VideoModal from './components/VideoModal/VideoModal';
 import ShowingMovie from './pages/AdminDashboard/MovieManager/ShowingMovie/ShowingMovie';
 import UpcomingMovie from './pages/AdminDashboard/MovieManager/UpcomingMovie/UpcomingMovie';
 import Profile from './pages/UserDashboard/Profile/Profile';
-
-const CheckoutTemplateLazy = lazy(() => import('./templates/CheckoutTemplate/CheckOutTemplate'))
+import CheckoutTemplate from './templates/CheckoutTemplate/CheckOutTemplate';
 
 export const history = createBrowserHistory();
 
@@ -39,35 +38,40 @@ function App() {
       <Loading />
       <VideoModal />
       <Switch>
+
+        <HomeTemplate exact path='/home' comp={Home} />
+
+        <HomeTemplate exact path='/detail/:id' comp={Detail} />
+
+        <UserTemplate exact path='/login' comp={Login} />
+        <UserTemplate exact path='/register' comp={Register} />
+
+        <AdminDashboardTemplate path='/admin' exact comp={AdminDashboard} />
+        <AdminDashboardTemplate path='/admin/userlist/addnew' exact comp={AddNewUser} />
+        <AdminDashboardTemplate path='/admin/userlist/:name' exact comp={EditUserInfor} />
+        <AdminDashboardTemplate path='/admin/movielist' exact comp={MovieManager} />
+        <AdminDashboardTemplate path='/admin/movielist/showing' exact comp={ShowingMovie} />
+        <AdminDashboardTemplate path='/admin/movielist/upcoming' exact comp={UpcomingMovie} />
+        <AdminDashboardTemplate path='/admin/movielist/addnew' exact comp={AddNewMovie} />
+        <AdminDashboardTemplate path='/admin/movielist/edit/:id' exact comp={EditMovieDetail} />
+        <AdminDashboardTemplate path='/admin/showtime/:id/:name' exact comp={EditMovieShowtime} />
+        <AdminDashboardTemplate path='/admin/booking/:name' exact comp={BookingHistory} />
+        <AdminDashboardTemplate path='/admin/booking/:id' exact comp={TicketDetail} />
+        <AdminDashboardTemplate path='/admin/account' exact comp={Account} />
+
+        <UserDashboardTemplate path='/user' exact comp={UserDashboard} />
+        <UserDashboardTemplate path='/user/profile' exact comp={Profile} />
+
+
+        <CheckoutTemplate path='/checkout/:id' exact comp={Checkout} />
         {/* Default page */}
-        <HomeTemplate exact path={'/'} comp={Home} />
-        
-        <HomeTemplate exact path={'/home'} comp={Home} />
-        
-        <HomeTemplate exact path={'/detail/:id'} comp={Detail} />
-        
-        <UserTemplate exact path={'/login'} comp={Login} />
-        <UserTemplate exact path={'/register'} comp={Register} />
+        <HomeTemplate path='/' exact comp={Home} />
 
-        <AdminDashboardTemplate exact path={'/admin'} comp={AdminDashboard} />
-        <AdminDashboardTemplate exact path={'/admin/userlist/addnew'} comp={AddNewUser} />
-        <AdminDashboardTemplate exact path={'/admin/userlist/:name'} comp={EditUserInfor} />
-        <AdminDashboardTemplate exact path={'/admin/movielist'} comp={MovieManager} />
-        <AdminDashboardTemplate exact path={'/admin/movielist/showing'} comp={ShowingMovie} />
-        <AdminDashboardTemplate exact path={'/admin/movielist/upcoming'} comp={UpcomingMovie} />
-        <AdminDashboardTemplate exact path={'/admin/movielist/addnew'} comp={AddNewMovie} />
-        <AdminDashboardTemplate exact path={'/admin/movielist/edit/:id'} comp={EditMovieDetail} />
-        <AdminDashboardTemplate exact path={'/admin/showtime/:id/:name'} comp={EditMovieShowtime} />
-        <AdminDashboardTemplate exact path={'/admin/booking/:name'} comp={BookingHistory} />
-        <AdminDashboardTemplate exact path={'/admin/booking/:id'} comp={TicketDetail} />
-        <AdminDashboardTemplate exact path={'/admin/account'} comp={Account} />
+        {/* <Suspense fallback={<h1 className='text-center text-6xl font-bold'>Đợi mình tí ...</h1>}>
+          <CheckoutTemplateLazy path='/checkout/:id' exact comp={Checkout} />
+        </Suspense> */}
 
-        <UserDashboardTemplate exact path={'/user'} comp={UserDashboard} />
-        <UserDashboardTemplate exact path={'/user/profile'} comp={Profile} />
-
-        <Suspense fallback={<h1 className='text-center text-6xl font-bold'>Đợi mình tí ...</h1>}>
-          <CheckoutTemplateLazy exact path={'/checkout/:id'} comp={Checkout} />
-        </Suspense>
+        
       </Switch>
     </Router>
   );

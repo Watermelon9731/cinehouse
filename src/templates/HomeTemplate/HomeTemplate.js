@@ -28,10 +28,14 @@ export const HomeTemplate = ({
     })
 
     return (
-        <Fragment>
-            <Header />
-            <Route {...rest} render={props => <Component {...props} />} />
-            <Footer />
-        </Fragment>
+        <Route {...rest} render={(props) => {
+            return (
+                <Fragment>
+                    <Header />
+                    <Component {...props} />
+                    <Footer />
+                </Fragment>
+            )
+        }} />
     );
 }

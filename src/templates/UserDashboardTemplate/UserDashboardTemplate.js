@@ -44,44 +44,49 @@ export const UserDashboardTemplate = ({
     }
 
     return (
-        <Fragment>
-            <Layout style={{ minHeight: "100vh" }}>
-                <Sider width={250} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-                    <NavLink to='/home' className="logo p-5">
-                        <img src={LOGO} alt="cinehouse-logo" className="w-40 m-auto" />
-                    </NavLink>
-                    <Menu theme="dark" defaultSelectedKeys='sub1'
-                        mode="inline"
-                        items={items}
-                    />
-                </Sider>
-                <Layout className="site-layout">
-                    <Header className="site-layout-background flex justify-between" style={{ padding: 0 }}>
-                        <h1 className="text-3xl text-white font-bold mt-3 pl-4">
-                            User dashboard
-                        </h1>
-                        <button type='button' className="text-white rounded my-auto mr-10 relative" onClick={() => {
-                            userLocalService.removeUserInfor();
+        <Route {...rest} render={(props) => {
+            return (
+                <Fragment>
+                    <Layout style={{ minHeight: "100vh" }}>
+                        <Sider width={250} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+                            <NavLink to='/home' className="logo p-5">
+                                <img src={LOGO} alt="cinehouse-logo" className="w-40 m-auto" />
+                            </NavLink>
+                            <Menu theme="dark" defaultSelectedKeys='sub1'
+                                mode="inline"
+                                items={items}
+                            />
+                        </Sider>
+                        <Layout className="site-layout">
+                            <Header className="site-layout-background flex justify-between" style={{ padding: 0 }}>
+                                <h1 className="text-3xl text-white font-bold mt-3 pl-4">
+                                    User dashboard
+                                </h1>
+                                <button type='button' className="text-white rounded my-auto mr-10 relative" onClick={() => {
+                                    userLocalService.removeUserInfor();
 
-                            history.push('/home');
-                        }}>
-                            <span className="bg-indigo-500 p-3 rounded hover:bg-red-500 m-auto font-medium">
-                                Đăng xuất
-                            </span>
-                        </button>
-                    </Header>
-                    <Content style={{ margin: "0 16px", }}>
-                        <div
-                            className="mt-8 site-layout-background"
-                            style={{ padding: 24, minHeight: 360, }}>
-                            <Route {...rest} render={props => <Component {...props} />} />
-                        </div>
-                    </Content>
-                    <Footer style={{ textAlign: "center", }}>
-                        Created by T.D.C.Thinh
-                    </Footer>
-                </Layout>
-            </Layout>
-        </Fragment>
+                                    history.push('/home');
+                                }}>
+                                    <span className="bg-indigo-500 p-3 rounded hover:bg-red-500 m-auto font-medium">
+                                        Đăng xuất
+                                    </span>
+                                </button>
+                            </Header>
+                            <Content style={{ margin: "0 16px", }}>
+                                <div
+                                    className="mt-8 site-layout-background"
+                                    style={{ padding: 24, minHeight: 360, }}>
+                                    <Component {...props} />
+                                </div>
+                            </Content>
+                            <Footer style={{ textAlign: "center", }}>
+                                Created by T.D.C.Thinh
+                            </Footer>
+                        </Layout>
+                    </Layout>
+                </Fragment>
+            )
+        }
+        } />
     )
 };
