@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { history } from "../../App";
@@ -102,7 +102,7 @@ export default function Header(props) {
                 onClick={() => {
                   userLocalService.removeUserInfor();
                   localStorage.removeItem(ACCESS_TOKEN);
-                  history.push('/home')
+                  window.location.reload();
                 }}
               >
                 Đăng xuất
@@ -146,9 +146,7 @@ export default function Header(props) {
               ></path>
             </svg>
           </button>
-          <div
-            className="collapse navbar-collapse flex-grow items-center relative"
-          >
+          <div className="collapse navbar-collapse flex-grow items-center relative">
             <NavLink
               className="flex items-center text-gray-900 hover:text-gray-900 focus:text-gray-900 mt-2 lg:mt-0"
               alt="cinehouse-logo"
@@ -163,7 +161,9 @@ export default function Header(props) {
             </NavLink>
             {/* Left links */}
             <div className="navbar-nav flex flex-col pl-0 list-style-none ml-2 mr-auto mb-0 absolute left-20">
-              <div className="nav-item p-2 text-white text-xl font-semibold leading-loose ">Cinehouse - Đặt vé và trải nghiệm</div>
+              <div className="nav-item p-2 text-white text-xl font-semibold leading-loose ">
+                Cinehouse - Đặt vé và trải nghiệm
+              </div>
               <div></div>
             </div>
             {/* Left links */}

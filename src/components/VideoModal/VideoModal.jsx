@@ -20,7 +20,7 @@ export default function VideoModal(props) {
           }}
         >
           <iframe
-            class="embed-responsive-item absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-2/3"
+            className="embed-responsive-item absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-2/3"
             src={videoUrl}
             allowfullscreen=""
             data-gtm-yt-inspected-2340190_699="true"

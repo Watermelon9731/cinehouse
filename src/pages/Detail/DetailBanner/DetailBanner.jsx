@@ -1,7 +1,9 @@
+import { PlayCircleOutlined } from "@ant-design/icons";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { dateFormat, searchMovie } from "../../../controllers/controller";
+import { loadingDisplayVideoAction } from "../../../redux/actions/loadingAction";
 import { getMovieDetailApi } from "../../../redux/actions/movieAction";
 
 export default function DetailBanner() {
@@ -25,7 +27,11 @@ export default function DetailBanner() {
         <div className="banner-glass glass-item-s2 w-full h-full flex justify-evenly items-center">
           <div className="glass-img w-1/4 h-auto overflow-hidden rounded-xl">
             <div className="glass-item-s2 rounded-lg overflow-hidden">
-              <img src={movieDetail.hinhAnh} alt={movieDetail.biDanh} className="w-full" />
+              <img
+                src={movieDetail.hinhAnh}
+                alt={movieDetail.biDanh}
+                className="w-full"
+              />
             </div>
           </div>
           <div className="w-1/2 text-left">
@@ -42,12 +48,30 @@ export default function DetailBanner() {
                     Đánh giá: {movieDetail.danhGia}/10
                   </h3>
                 </div>
-                <p className="pb-3 text-lg">{movieDetail.moTa}</p>
+                <p className="pb-3 text-sm leading-normal">
+                  {movieDetail.moTa}
+                </p>
               </div>
             </div>
-            <a href="#cinema" className="block text-center w-1/3 my-8 bg-red-500 rounded hover:bg-indigo-500 py-4 px-8 text-white hover:text-white text-xl font-semibold uppercase">
-              Mua vé ngay
-            </a>
+            <div className="flex">
+              <button
+                className="w-1/3 my-8 mr-3 bg-red-500 rounded hover:bg-indigo-500 py-4 px-8 text-white hover:text-white text-xl font-semibold uppercase"
+                onClick={() => {
+                  window.scrollBy(0, 500);
+                }}
+              >
+                Mua vé ngay
+              </button>
+              <button
+                className="w-1/3 my-8 border-collapse rounded py-4 text-white hover:text-red-500 text-xl font-semibold uppercase"
+                onClick={() => {
+                  dispatch(loadingDisplayVideoAction(movieDetail.trailer));
+                }}
+              >
+                Xem trailer
+                <PlayCircleOutlined className="ml-3 -translate-y-1/4" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
