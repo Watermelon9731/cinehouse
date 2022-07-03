@@ -13,7 +13,7 @@ const stateDefault = {
     ],
 }
 
-export const seatBookingReducer = (state = stateDefault, action) => {
+export const seatBookingReducer = (state = stateDefault, action) => {       
     switch (action.type) {
         case GET_SEAT_BOOKING_LIST: {
             state.bookingDetail = action.bookingDetail;
@@ -39,8 +39,9 @@ export const seatBookingReducer = (state = stateDefault, action) => {
         }
 
         case FINISH_SEAT_BOOKING: {
+            console.log('voo');
             state.userBooking = new UserBookingModel();
-            state.seatSelection = [];
+            state.seatSelection = new Array();
             return { ...state }
         }
 

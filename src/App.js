@@ -56,12 +56,12 @@ function App() {
         <AdminDashboardTemplate path='/admin/movielist/edit/:id' exact comp={EditMovieDetail} />
         <AdminDashboardTemplate path='/admin/showtime/:id/:name' exact comp={EditMovieShowtime} />
         <AdminDashboardTemplate path='/admin/booking/:name' exact comp={BookingHistory} />
-        <AdminDashboardTemplate path='/admin/booking/:id' exact comp={TicketDetail} />
+        <AdminDashboardTemplate path='/admin/booking/:name/:id' exact comp={TicketDetail} />
         <AdminDashboardTemplate path='/admin/account' exact comp={Account} />
 
         <UserDashboardTemplate path='/user' exact comp={UserDashboard} />
         <UserDashboardTemplate path='/user/profile' exact comp={Profile} />
-
+        <UserDashboardTemplate path='/user/booking/:id' exact comp={TicketDetail} />
 
         <CheckoutTemplate path='/checkout/:id' exact comp={Checkout} />
         {/* Default page */}

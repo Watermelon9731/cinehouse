@@ -94,6 +94,8 @@ export const AdminDashboardTemplate = ({
                                     userLocalService.removeUserInfor();
 
                                     history.push('/home');
+
+                                    window.location.reload();
                                 }}>
                                     <span className="bg-indigo-500 p-3 rounded hover:bg-red-500 m-auto font-medium">
                                         Đăng xuất

@@ -2,7 +2,7 @@ import { Table, Input } from "antd";
 import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { FileTextOutlined } from "@ant-design/icons";
 
 import { movieLocalService, userLocalService } from "../../util/config";

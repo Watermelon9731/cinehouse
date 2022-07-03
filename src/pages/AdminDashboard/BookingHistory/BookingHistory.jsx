@@ -60,7 +60,7 @@ export default function BookingHistory(props) {
         return (
           <Fragment>
             <NavLink
-              to={`/admin/booking/${ticket.maVe}`}
+              to={`/admin/booking/${name}/${ticket.maVe}`}
               className="bg-indigo-600 text-white p-2 rounded mr-3 border 
               hover:text-indigo-600 hover:bg-transparent hover:border-indigo-600"
             >
