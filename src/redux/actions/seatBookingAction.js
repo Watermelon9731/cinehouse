@@ -46,6 +46,10 @@ export const postSeatBookingApi = (userBooking) => {
             // Send user booking action to server
             let result = await http.post('/api/QuanLyDatVe/DatVe', userBooking)
 
+            console.log(result);
+            console.log(result.data.content);
+            alert(result.data.content);
+
             // reload seatDetail to show result
             await dispatch(getSeatBookingListApi(userBooking.maLichChieu))
 

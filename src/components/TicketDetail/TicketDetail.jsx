@@ -4,7 +4,7 @@ import React from "react";
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { history } from "../../../../App";
+import { history } from "../../App";
 
 export default function TicketDetail() {
   const { bookingHistory } = useSelector((state) => state.adminReducer);

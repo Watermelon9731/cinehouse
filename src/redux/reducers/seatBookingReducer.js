@@ -39,7 +39,6 @@ export const seatBookingReducer = (state = stateDefault, action) => {
         }
 
         case FINISH_SEAT_BOOKING: {
-            console.log('voo');
             state.userBooking = new UserBookingModel();
             state.seatSelection = new Array();
             return { ...state }

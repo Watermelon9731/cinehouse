@@ -23,7 +23,7 @@ import EditMovieShowtime from './pages/AdminDashboard/MovieManager/EditMovieShow
 import Account from './pages/AdminDashboard/Account/Account';
 import AddNewUser from './pages/AdminDashboard/AddNewUser/AddNewUser';
 import BookingHistory from './pages/AdminDashboard/BookingHistory/BookingHistory';
-import TicketDetail from './pages/AdminDashboard/BookingHistory/TicketDetail/TicketDetail';
+import TicketDetail from './components/TicketDetail/TicketDetail';
 import VideoModal from './components/VideoModal/VideoModal';
 import ShowingMovie from './pages/AdminDashboard/MovieManager/ShowingMovie/ShowingMovie';
 import UpcomingMovie from './pages/AdminDashboard/MovieManager/UpcomingMovie/UpcomingMovie';
@@ -37,6 +37,7 @@ function App() {
     <Router history={history} >
       <Loading />
       <VideoModal />
+      
       <Switch>
 
         <HomeTemplate exact path='/home' comp={Home} />
