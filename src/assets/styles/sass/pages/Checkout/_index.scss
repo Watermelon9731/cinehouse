@@ -11,6 +11,7 @@
   #checkout {
     .checkout-infor {
       display: block;
+      height: 300px;
       .movie-title {
         width: auto;
         .content {
@@ -93,8 +94,12 @@
   #checkout {
     .checkout-infor {
       display: block;
+      height: auto;
       .movie-title {
         width: auto;
+        img {
+          width: auto;
+        }
         .content {
           margin-left: 1rem;
           padding-left: 0;

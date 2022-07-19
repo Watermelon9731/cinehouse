@@ -127,7 +127,7 @@ export default function Checkout(props) {
   };
 
   return (
-    <div className="checkout" id="checkout">
+    <div className="checkout overflow-hidden" id="checkout">
       <div className="checkout-infor p-5 flex justify-between">
         <div className="movie-title w-1/2 text-white flex border-gray-400">
           <img

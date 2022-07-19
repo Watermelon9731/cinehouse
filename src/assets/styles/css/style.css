@@ -356,6 +356,7 @@
 @media screen and (max-width: 480px) {
   #checkout .checkout-infor {
     display: block;
+    height: 300px;
   }
   #checkout .checkout-infor .movie-title {
     width: auto;
@@ -429,8 +430,12 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #checkout .checkout-infor {
     display: block;
+    height: auto;
   }
   #checkout .checkout-infor .movie-title {
+    width: auto;
+  }
+  #checkout .checkout-infor .movie-title img {
     width: auto;
   }
   #checkout .checkout-infor .movie-title .content {
