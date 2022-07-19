@@ -127,7 +127,7 @@ export default function Checkout(props) {
   };
 
   return (
-    <div className="checkout overflow-hidden" id="checkout">
+    <div className="checkout" id="checkout">
       <div className="checkout-infor p-5 flex justify-between">
         <div className="movie-title w-1/2 text-white flex border-gray-400">
           <img
@@ -168,23 +168,23 @@ export default function Checkout(props) {
           </div>
           <div className="booking-block gap-3 mb-8">{renderSeat()}</div>
           <div className="seat-status grid grid-cols-3 gap-4">
-            <div className="booked-seat flex justify-start">
+            <div className="seat flex justify-start">
               <div className="p-3 mr-2 bg-red-500 rounded"></div>
               <span className="text-white self-end text-sm">Ghế đã đặt</span>
             </div>
-            <div className="booked-seat flex justify-start">
+            <div className="seat flex justify-start">
               <div className="p-3 mr-2 bg-yellow-500 rounded"></div>
               <span className="text-white self-end text-sm">Ghế VIP</span>
             </div>
-            <div className="booked-seat flex justify-start">
+            <div className="seat flex justify-start">
               <div className="p-3 mr-2 bg-indigo-500 rounded"></div>
               <span className="text-white self-end text-sm">Ghế đã chọn</span>
             </div>
-            <div className="booked-seat flex justify-start">
+            <div className="seat flex justify-start">
               <div className="p-3 mr-2 bg-gray-400 rounded"></div>
               <span className="text-white self-end text-sm">Ghế còn trống</span>
             </div>
-            <div className="booked-seat flex justify-start">
+            <div className="seat flex justify-start">
               <div className="p-3 mr-2 bg-purple-500 rounded"></div>
               <span className="text-white self-end text-sm">
                 Ghế đang được đặt

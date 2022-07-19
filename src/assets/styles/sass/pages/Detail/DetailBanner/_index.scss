@@ -4,14 +4,131 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   .glass-item-s2 {
     // margin: 0 auto;
     // width: 16rem;
     // height: 20rem;
     // border: 1px solid rgba(255, 255, 255, 0.18);
     // border-radius: 10px;
-    background: rgba(16, 18, 27, 0.5);
-    backdrop-filter: blur(2px);
+    background: rgba(16, 18, 27, 0.8);
+    backdrop-filter: blur(5px);
   }
+}
+
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 480px) {
+  .glass-container {
+    display: block;
+    background-image: none !important;
+    height: 100%;
+    .banner-glass {
+      display: block;
+      .glass-img {
+        width: 100%;
+        border-radius: 0;
+        .glass-img-container {
+          border-radius: 0;
+          display: block;
+        }
+      }
+      .glass-content {
+        width: 100%;
+        h2 {
+          padding-bottom: 0;
+          margin-bottom: 0.5rem;
+        }
+        .content {
+          .content-item {
+            h3 {
+              font-size: 1rem;
+              margin: 0;
+              padding-bottom: 1rem;
+              &:last-child {
+                margin-left: auto;
+              }
+            }
+          }
+          p {
+            padding-bottom: 0;
+            margin-bottom: 0;
+          }
+        }
+        .action-box {
+          background-color: $theme-color;
+          justify-content: space-between;
+          padding: 1rem 1.5rem;
+          button {
+            width: 45%;
+            padding: 0;
+            margin: 0;
+            padding: 1rem 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Tablet small size(480 x 640)*/
+@media screen and (max-width: 768px) {
+}
+
+/*Ipad vertical screen(768 x 1024)*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .glass-container {
+    display: block;
+    .banner-glass {
+      display: flex;
+      flex-flow: column wrap;
+      .glass-img {
+        display: block;
+        width: 50%;
+        overflow: visible;
+        .glass-img-container {
+          overflow: visible;
+          display: flex;
+          justify-items: center;
+        }
+      }
+      .glass-content {
+        width: 80%;
+        h2 {
+          padding-bottom: 0;
+          margin-bottom: 0.5rem;
+        }
+        .content {
+          .content-item {
+            h3 {
+              font-size: 1rem;
+              margin: 0;
+              padding-bottom: 1rem;
+              &:last-child {
+                margin-left: auto;
+              }
+            }
+          }
+          p {
+            padding-bottom: 0;
+            margin-bottom: 0;
+          }
+        }
+        .action-box {
+          background-color: $theme-color;
+          justify-content: space-between;
+          padding: 1rem 1.5rem;
+          button {
+            width: 45%;
+            padding: 0;
+            margin: 0;
+            padding: 1rem 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Ipad horizontal screen(1024 x 768)*/
+@media screen and (min-width: 1024px) {
 }

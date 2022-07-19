@@ -48,26 +48,27 @@ export default function Cinema() {
           <div className="box-office grid grid-flow-row gap-6">
             {cinema["cumRapChieu"]?.map((box, index) => {
               return (
-                <div className="box-item grid grid-cols-5 gap-5" key={index}>
-                  <div className="box-title border-collapse border-2 border-indigo-200 active:bg-indigo-400 rounded-lg p-3 text-center">
-                    <div className="mb-2">
-                      <h3 className="font-medium text-red-500 text-lg">{box.tenCumRap}</h3>
-                    </div>
-                    <div className="mb-2 text-base">
-                      <small>{box.diaChi}</small>
-                    </div>
+                <div className="box-item" key={index}>
+                  <div className="box-title flex items-baseline pb-3">
+                    <h3 className="font-medium text-red-500 text-lg pr-3">
+                      {box.tenCumRap}
+                    </h3>
+                    <span className="pl-3 border-l">{box.diaChi}</span>
                   </div>
-                  <div className="box-shcedule col-span-4 grid grid-cols-4 gap-5">
+                  <div className="box-schedule col-span-4 grid grid-cols-4 gap-5">
                     {box["lichChieuPhim"]?.map((schedule, index) => {
                       return (
-                        <NavLink to={`/checkout/${schedule.maLichChieu}`} key={index}>
+                        <NavLink
+                          to={`/checkout/${schedule.maLichChieu}`}
+                          key={index}
+                        >
                           <div className="w-full h-full text-center p-3 border-collapse border-2 border-indigo-200 hover:bg-red-500 rounded-lg">
                             <div className="content">
-                              <div className="time text-white text-base font-semibold">
+                              <span className="time text-white text-base font-semibold">
                                 {moment(schedule.ngayChieuGioChieu).format(
                                   "hh:mm A ~ DD/MM/YYYY"
                                 )}
-                              </div>
+                              </span>
                             </div>
                           </div>
                         </NavLink>
@@ -84,7 +85,10 @@ export default function Cinema() {
   };
 
   return (
-    <div className="cinema flex flex-col justify-center items-center py-5 px-24" id="cinema">
+    <div
+      className="cinema flex flex-col justify-center items-center py-5 px-24"
+      id="cinema"
+    >
       <div className="cinema-item w-full h-1/3 my-5 rounded-b-md">
         <div className="title bg-indigo-400 text-center">
           <h3 className="text-white text-xl font-semibold p-5 px-4">

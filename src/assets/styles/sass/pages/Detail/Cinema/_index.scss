@@ -1,4 +1,4 @@
-.cinema {
+#cinema {
   background-color: $theme-color;
   .cinema-item {
     background-color: rgba(51, 51, 51, 0.7);
@@ -7,6 +7,7 @@
     overflow: hidden;
 
     .content {
+      padding-top: 0;
       ul {
         .active {
           background-color: rgb(129, 140, 248);
@@ -14,4 +15,92 @@
       }
     }
   }
+}
+
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 480px) {
+  #cinema {
+    padding: 0 1.25rem;
+    .cinema-item {
+      .content {
+        padding-top: 0;
+        ul {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        .tab-content {
+          .box-office {
+            .box-item {
+              grid-template-columns: 1fr;
+              column-gap: 0;
+              .box-title {
+                display: block;
+                text-align: center;
+                span {
+                  border: 0;
+                  padding: 0;
+                }
+              }
+              .box-schedule {
+                display: flex;
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Tablet small size(480 x 640)*/
+@media screen and (max-width: 768px) {
+}
+
+/*Ipad vertical screen(768 x 1024)*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #cinema {
+    padding: 0 1.25rem;
+    .cinema-item {
+      .content {
+        padding-top: 0;
+        ul {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          li {
+            align-items: center;
+            a {
+              padding: 1rem;
+              img {
+                width: 50%;
+                margin: auto;
+              }
+            }
+          }
+        }
+        .tab-content {
+          .box-office {
+            .box-item {
+              grid-template-columns: 1fr;
+              column-gap: 0;
+              .box-title {
+                display: block;
+                text-align: center;
+                span {
+                  border: 0;
+                  padding: 0;
+                }
+              }
+              .box-schedule {
+                display: flex;
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Ipad horizontal screen(1024 x 768)*/
+@media screen and (min-width: 1024px) {
 }

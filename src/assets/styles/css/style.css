@@ -37,6 +37,16 @@
   transition: 0.5s;
 }
 
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 480px) {
+  #header .register-status {
+    display: none;
+  }
+}
+
+/*Tablet small size(480 x 640)*/
+/*Ipad vertical screen(768 x 1024)*/
+/*Ipad horizontal screen(1024 x 768)*/
 #footer {
   background-color: #191820;
 }
@@ -99,26 +109,230 @@
 }
 
 .glass-container .glass-item-s2 {
-  background: rgba(16, 18, 27, 0.5);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  background: rgba(16, 18, 27, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
-.cinema {
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 480px) {
+  .glass-container {
+    display: block;
+    background-image: none !important;
+    height: 100%;
+  }
+  .glass-container .banner-glass {
+    display: block;
+  }
+  .glass-container .banner-glass .glass-img {
+    width: 100%;
+    border-radius: 0;
+  }
+  .glass-container .banner-glass .glass-img .glass-img-container {
+    border-radius: 0;
+    display: block;
+  }
+  .glass-container .banner-glass .glass-content {
+    width: 100%;
+  }
+  .glass-container .banner-glass .glass-content h2 {
+    padding-bottom: 0;
+    margin-bottom: 0.5rem;
+  }
+  .glass-container .banner-glass .glass-content .content .content-item h3 {
+    font-size: 1rem;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+  .glass-container .banner-glass .glass-content .content .content-item h3:last-child {
+    margin-left: auto;
+  }
+  .glass-container .banner-glass .glass-content .content p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .glass-container .banner-glass .glass-content .action-box {
+    background-color: #191820;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+  .glass-container .banner-glass .glass-content .action-box button {
+    width: 45%;
+    padding: 0;
+    margin: 0;
+    padding: 1rem 0;
+  }
+}
+
+/*Tablet small size(480 x 640)*/
+/*Ipad vertical screen(768 x 1024)*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .glass-container {
+    display: block;
+  }
+  .glass-container .banner-glass {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+  }
+  .glass-container .banner-glass .glass-img {
+    display: block;
+    width: 50%;
+    overflow: visible;
+  }
+  .glass-container .banner-glass .glass-img .glass-img-container {
+    overflow: visible;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-items: center;
+  }
+  .glass-container .banner-glass .glass-content {
+    width: 80%;
+  }
+  .glass-container .banner-glass .glass-content h2 {
+    padding-bottom: 0;
+    margin-bottom: 0.5rem;
+  }
+  .glass-container .banner-glass .glass-content .content .content-item h3 {
+    font-size: 1rem;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+  .glass-container .banner-glass .glass-content .content .content-item h3:last-child {
+    margin-left: auto;
+  }
+  .glass-container .banner-glass .glass-content .content p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .glass-container .banner-glass .glass-content .action-box {
+    background-color: #191820;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+  .glass-container .banner-glass .glass-content .action-box button {
+    width: 45%;
+    padding: 0;
+    margin: 0;
+    padding: 1rem 0;
+  }
+}
+
+/*Ipad horizontal screen(1024 x 768)*/
+#cinema {
   background-color: #191820;
 }
 
-.cinema .cinema-item {
+#cinema .cinema-item {
   background-color: rgba(51, 51, 51, 0.7);
   border: 1px solid white;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.cinema .cinema-item .content ul .active {
+#cinema .cinema-item .content {
+  padding-top: 0;
+}
+
+#cinema .cinema-item .content ul .active {
   background-color: #818cf8;
 }
 
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 480px) {
+  #cinema {
+    padding: 0 1.25rem;
+  }
+  #cinema .cinema-item .content {
+    padding-top: 0;
+  }
+  #cinema .cinema-item .content ul {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+  #cinema .cinema-item .content .tab-content .box-office .box-item {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -webkit-column-gap: 0;
+            column-gap: 0;
+  }
+  #cinema .cinema-item .content .tab-content .box-office .box-item .box-title {
+    display: block;
+    text-align: center;
+  }
+  #cinema .cinema-item .content .tab-content .box-office .box-item .box-title span {
+    border: 0;
+    padding: 0;
+  }
+  #cinema .cinema-item .content .tab-content .box-office .box-item .box-schedule {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+/*Tablet small size(480 x 640)*/
+/*Ipad vertical screen(768 x 1024)*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #cinema {
+    padding: 0 1.25rem;
+  }
+  #cinema .cinema-item .content {
+    padding-top: 0;
+  }
+  #cinema .cinema-item .content ul {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  #cinema .cinema-item .content ul li {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #cinema .cinema-item .content ul li a {
+    padding: 1rem;
+  }
+  #cinema .cinema-item .content ul li a img {
+    width: 50%;
+    margin: auto;
+  }
+  #cinema .cinema-item .content .tab-content .box-office .box-item {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -webkit-column-gap: 0;
+            column-gap: 0;
+  }
+  #cinema .cinema-item .content .tab-content .box-office .box-item .box-title {
+    display: block;
+    text-align: center;
+  }
+  #cinema .cinema-item .content .tab-content .box-office .box-item .box-title span {
+    border: 0;
+    padding: 0;
+  }
+  #cinema .cinema-item .content .tab-content .box-office .box-item .box-schedule {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+/*Ipad horizontal screen(1024 x 768)*/
 #login {
   background-color: #191820f4;
 }
@@ -138,6 +352,152 @@
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 480px) {
+  #checkout .checkout-infor {
+    display: block;
+  }
+  #checkout .checkout-infor .movie-title {
+    width: auto;
+  }
+  #checkout .checkout-infor .movie-title .content {
+    margin-left: 1rem;
+    padding-left: 0;
+  }
+  #checkout .checkout-infor .movie-title .content h1 {
+    font-size: 1.5rem;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+  }
+  #checkout .checkout-infor .movie-title .content p {
+    font-size: 0.8rem;
+  }
+  #checkout .checkout-infor .user-infor {
+    display: none;
+  }
+  #checkout .checkout-content {
+    display: block;
+  }
+  #checkout .checkout-content .booking {
+    width: auto;
+  }
+  #checkout .checkout-content .booking .screen {
+    width: auto;
+    margin-bottom: 1rem;
+  }
+  #checkout .checkout-content .booking .screen .screen-main {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  #checkout .checkout-content .booking .booking-block {
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  #checkout .checkout-content .booking .booking-block .seat-item {
+    padding: 0;
+    font-size: 0.5rem;
+  }
+  #checkout .checkout-content .seat-status {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  #checkout .checkout-content .seat-status .seat div {
+    padding: 0.6rem;
+  }
+  #checkout .checkout-content .seat-status .seat span {
+    font-size: 0.6rem;
+  }
+  #checkout .checkout-content .detail {
+    width: 100%;
+  }
+  #checkout .checkout-content .detail .selecting h2 {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  #checkout .checkout-content .detail .selecting .list {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+  #checkout .checkout-content .detail button {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+}
+
+/*Tablet small size(480 x 640)*/
+/*Ipad vertical screen(768 x 1024)*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #checkout .checkout-infor {
+    display: block;
+  }
+  #checkout .checkout-infor .movie-title {
+    width: auto;
+  }
+  #checkout .checkout-infor .movie-title .content {
+    margin-left: 1rem;
+    padding-left: 0;
+  }
+  #checkout .checkout-infor .movie-title .content h1 {
+    font-size: 1.8rem;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+  }
+  #checkout .checkout-infor .movie-title .content p {
+    font-size: 1rem;
+  }
+  #checkout .checkout-infor .user-infor {
+    display: none;
+  }
+  #checkout .checkout-content {
+    display: block;
+  }
+  #checkout .checkout-content .booking {
+    width: auto;
+  }
+  #checkout .checkout-content .booking .screen {
+    width: auto;
+    margin-bottom: 1rem;
+  }
+  #checkout .checkout-content .booking .screen .screen-main {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  #checkout .checkout-content .booking .booking-block {
+    gap: auto;
+    margin-bottom: 1rem;
+  }
+  #checkout .checkout-content .booking .booking-block .seat-item {
+    padding: auto;
+    font-size: 0.75rem;
+  }
+  #checkout .checkout-content .seat-status {
+    gap: auto;
+    margin-bottom: 2rem;
+  }
+  #checkout .checkout-content .seat-status .seat div {
+    padding: 0.6rem;
+  }
+  #checkout .checkout-content .seat-status .seat span {
+    font-size: 0.7rem;
+  }
+  #checkout .checkout-content .detail {
+    width: 100%;
+  }
+  #checkout .checkout-content .detail .selecting h2 {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  #checkout .checkout-content .detail .selecting .list {
+    padding: auto;
+    font-size: 0.9rem;
+  }
+  #checkout .checkout-content .detail button {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+}
+
+/*Ipad horizontal screen(1024 x 768)*/
 #components-layout-demo-side .logo {
   height: 32px;
   margin: 16px;

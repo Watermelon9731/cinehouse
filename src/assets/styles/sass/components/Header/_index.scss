@@ -24,3 +24,27 @@
     }
   }
 }
+
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 480px){
+    #header {
+      .register-status {
+        display: none;
+      }
+    }
+}
+
+/*Tablet small size(480 x 640)*/
+@media screen and (max-width: 768px){
+    
+}
+
+/*Ipad vertical screen(768 x 1024)*/
+@media screen and (max-width: 1024px){
+    
+}
+
+/*Ipad horizontal screen(1024 x 768)*/
+@media screen and (min-width: 1024px){
+  
+}

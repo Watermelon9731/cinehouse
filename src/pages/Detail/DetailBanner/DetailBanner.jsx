@@ -26,7 +26,7 @@ export default function DetailBanner() {
       >
         <div className="banner-glass glass-item-s2 w-full h-full flex justify-evenly items-center">
           <div className="glass-img w-1/4 h-auto overflow-hidden rounded-xl">
-            <div className="glass-item-s2 rounded-lg overflow-hidden">
+            <div className="glass-img-container glass-item-s2 rounded-lg overflow-hidden">
               <img
                 src={movieDetail.hinhAnh}
                 alt={movieDetail.biDanh}
@@ -34,7 +34,7 @@ export default function DetailBanner() {
               />
             </div>
           </div>
-          <div className="w-1/2 text-left">
+          <div className="glass-content w-1/2 text-left">
             <div className="glass-item-s2 text-left text-white rounded inline-block px-6 py-4">
               <h2 className="text-3xl leading-relaxed font-bold pb-5 text-red-500 uppercase">
                 {movieDetail.tenPhim}
@@ -53,14 +53,14 @@ export default function DetailBanner() {
                 </p>
               </div>
             </div>
-            <div className="flex">
+            <div className="action-box flex">
               <button
                 className="w-1/3 my-8 mr-3 bg-red-500 rounded hover:bg-indigo-500 py-4 px-8 text-white hover:text-white text-xl font-semibold uppercase"
                 onClick={() => {
                   window.scrollBy(0, 500);
                 }}
               >
-                Mua vé ngay
+                <span>Mua vé ngay</span>
               </button>
               <button
                 className="w-1/3 my-8 border-collapse rounded py-4 text-white hover:text-red-500 text-xl font-semibold uppercase"

@@ -5,3 +5,167 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
+
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 480px) {
+  #checkout {
+    .checkout-infor {
+      display: block;
+      .movie-title {
+        width: auto;
+        .content {
+          margin-left: 1rem;
+          padding-left: 0;
+          h1 {
+            font-size: 1.5rem;
+            line-height: normal;
+            margin-bottom: 0.5rem;
+          }
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+      .user-infor {
+        display: none;
+      }
+    }
+    .checkout-content {
+      display: block;
+      .booking {
+        width: auto;
+        .screen {
+          width: auto;
+          margin-bottom: 1rem;
+          .screen-main {
+            padding: 0.5rem;
+            font-size: 1rem;
+          }
+        }
+        .booking-block {
+          gap: 0.3rem;
+          margin-bottom: 1rem;
+          .seat-item {
+            padding: 0;
+            font-size: 0.5rem;
+          }
+        }
+      }
+      .seat-status {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        .seat {
+          div {
+            padding: 0.6rem;
+          }
+          span {
+            font-size: 0.6rem;
+          }
+        }
+      }
+      .detail {
+        width: 100%;
+        .selecting {
+          h2 {
+            font-size: 1rem;
+            padding: 0.5rem;
+          }
+          .list {
+            padding: 0.5rem;
+            font-size: 0.75rem;
+          }
+        }
+        button {
+          padding: 0.5rem 0;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/*Tablet small size(480 x 640)*/
+@media screen and (max-width: 768px) {
+}
+
+/*Ipad vertical screen(768 x 1024)*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #checkout {
+    .checkout-infor {
+      display: block;
+      .movie-title {
+        width: auto;
+        .content {
+          margin-left: 1rem;
+          padding-left: 0;
+          h1 {
+            font-size: 1.8rem;
+            line-height: normal;
+            margin-bottom: 0.5rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+      .user-infor {
+        display: none;
+      }
+    }
+    .checkout-content {
+      display: block;
+      .booking {
+        width: auto;
+        .screen {
+          width: auto;
+          margin-bottom: 1rem;
+          .screen-main {
+            padding: 0.5rem;
+            font-size: 1rem;
+          }
+        }
+        .booking-block {
+          gap: auto;
+          margin-bottom: 1rem;
+          .seat-item {
+            padding: auto;
+            font-size: 0.75rem;
+          }
+        }
+      }
+      .seat-status {
+        gap: auto;
+        margin-bottom: 2rem;
+        .seat {
+          div {
+            padding: 0.6rem;
+          }
+          span {
+            font-size: 0.7rem;
+          }
+        }
+      }
+      .detail {
+        width: 100%;
+        .selecting {
+          h2 {
+            font-size: 1rem;
+            padding: 0.5rem;
+          }
+          .list {
+            padding: auto;
+            font-size: 0.9rem;
+          }
+        }
+        button {
+          padding: 0.5rem 0;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/*Ipad horizontal screen(1024 x 768)*/
+@media screen and (min-width: 1024px) {
+}
